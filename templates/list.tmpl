@@ -1,0 +1,32 @@
+{{define "content"}}
+    <h3>Pages</h3>
+    <a href="/create">Add new page</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+            {{ range . }}
+                <tr>
+                    <td>{{ .Id }}</td>
+                    <td>{{ .Title }}</td>
+                    <td>
+                        <a href="/view/{{ .Id }}">
+                            <span title="view" class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                        </a>
+                        <a href="/edit/{{ .Id }}">
+                            <span title="edit" class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        </a>
+                        <a href="/delete/{{ .Id }}">
+                            <span title="delete" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                        </a>
+                    </td>
+                </tr>
+            {{ end }}
+        </tbody>
+    </table>
+{{end}}

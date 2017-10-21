@@ -1,0 +1,9 @@
+{{define "content"}}
+<p><a href="/">Pages</a></p>
+
+<p>Are you sure want to delete {{.Title}} ?</p>
+<form action="/delete/{{.Id}}" method="POST">
+    <a href="/" class="btn btn-default" role="button">No</a>
+    <button type="submit" class="btn btn-default">Yes</button>
+</form>
+{{end}}
